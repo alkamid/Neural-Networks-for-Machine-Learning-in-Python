@@ -65,7 +65,7 @@ def learn_perceptron(neg_examples_nobias, pos_examples_nobias, w_init=None, w_ge
     #to it from the initial weight vector.
     
     if len(w_gen_feas) != 0:
-        w_dist_history.append(np.norm(w-w_gen_feas))
+        w_dist_history.append(np.linalg.norm(w-w_gen_feas))
 
     #Iterate until the perceptron has correctly classified all points.
     while (num_errs > 0):
@@ -79,7 +79,7 @@ def learn_perceptron(neg_examples_nobias, pos_examples_nobias, w_init=None, w_ge
         #to it from the current weight vector.
         
         if len(w_gen_feas) != 0:
-            w_dist_history.append(norm(w-w_gen_feas))
+            w_dist_history.append(np.linalg.norm(w-w_gen_feas))
 
         #Find the data points that the perceptron has incorrectly classified.
         #and record the number of errors it makes.
