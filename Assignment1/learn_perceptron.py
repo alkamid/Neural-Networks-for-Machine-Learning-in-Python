@@ -117,17 +117,15 @@ def update_weights(neg_examples, pos_examples, w_current):
     num_neg_examples = neg_examples.shape[0]
     num_pos_examples = pos_examples.shape[0]
     for i in range(num_neg_examples):
-        this_case = neg_examples[i,:]
-        x = this_case.T #Hint
-        activation = this_case.dot(w)
+        x = neg_examples[[i],:]
+        activation = x.dot(w)
         if (activation >= 0):
             #YOUR CODE HERE
             pass
 
     for i in range(num_pos_examples):
-        this_case = pos_examples[i,:]
-        x = this_case.T
-        activation = this_case.dot(w)
+        x = pos_examples[[i],:]
+        activation = x.dot(w)
         if activation < 0:
             #YOUR CODE HERE
             pass

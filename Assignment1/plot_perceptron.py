@@ -36,15 +36,13 @@ def plot_perceptron(neg_examples, pos_examples, mistakes0, mistakes1, num_err_hi
     %       Empty if one has not been provided.
     %%
     """
-    plt.clf()
+
     fig = plt.figure()
     ax1 = fig.add_subplot(221)
 
     neg_correct_ind = [i for i in range(len(neg_examples)) if i not in mistakes0]
     pos_correct_ind = [i for i in range(len(pos_examples)) if i not in mistakes1]
-    print(mistakes0)
-    #print(neg_examples)
-    #print(neg_examples[[1,3],1])
+
     if neg_examples.any():
         ax1.scatter(neg_examples[neg_correct_ind,0], neg_examples[neg_correct_ind,1], marker='o', s=80, color='green')
 
